@@ -1,8 +1,11 @@
 #pragma once
 
 #include <stdint.h>
+#include <queue>
 
 #include "GameObject.h"
+
+using namespace std;
 
 class LevelGUI : public GameObject {
 public:
@@ -16,7 +19,11 @@ public:
     inline uint16_t GetFinishX() const { return finishX; }
     inline void SetFinishX(uint16_t finishXN) { finishX = finishXN; }
 
-    void Draw() const override;
+    void  Draw() const override;
+
+	void AddMessage(std::string str);
+
+	void DelLastMessage();
 
 private:
 
@@ -26,6 +33,9 @@ private:
     uint64_t passedTime, fps;
     uint16_t bombsNumber;
     int16_t score;
+
+	mutable queue<std::string> messages;
+	mutable uint64_t tempTime = 0;
 };
 
 

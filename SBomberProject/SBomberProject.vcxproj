@@ -140,9 +140,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Bomb.cpp" />
+    <ClCompile Include="CompositeHouse.cpp" />
+    <ClCompile Include="CompositeHouseLeaf.cpp" />
+    <ClCompile Include="CompositeHouseRoof.cpp" />
+    <ClCompile Include="CompositeHouseTree.cpp" />
+    <ClCompile Include="CompositeHouseWalls.cpp" />
     <ClCompile Include="Ground.cpp" />
     <ClCompile Include="House.cpp" />
     <ClCompile Include="LevelGUI.cpp" />
+    <ClCompile Include="Mediator.cpp" />
     <ClCompile Include="MyTools.cpp">
       <LanguageStandard Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdcpp17</LanguageStandard>
     </ClCompile>
@@ -152,14 +158,22 @@
     <ClCompile Include="ScreenSingleton.cpp" />
     <ClCompile Include="FileLoggerSingleton.cpp" />
     <ClCompile Include="Tank.cpp" />
+    <ClCompile Include="Tank1.cpp" />
+    <ClCompile Include="Tank2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bomb.h" />
+    <ClInclude Include="CompositeHouse.h" />
+    <ClInclude Include="CompositeHouseLeaf.h" />
+    <ClInclude Include="CompositeHouseRoof.h" />
+    <ClInclude Include="CompositeHouseTree.h" />
+    <ClInclude Include="CompositeHouseWalls.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="DynamicObject.h" />
     <ClInclude Include="Ground.h" />
     <ClInclude Include="DestroyableGroundObject.h" />
     <ClInclude Include="FileLoggerSingleton.h" />
+    <ClInclude Include="Mediator.h" />
     <ClInclude Include="ScreenSingleton.h" />
     <ClInclude Include="House.h" />
     <ClInclude Include="LevelGUI.h" />
@@ -167,6 +181,8 @@
     <ClInclude Include="Plane.h" />
     <ClInclude Include="SBomber.h" />
     <ClInclude Include="Tank.h" />
+    <ClInclude Include="Tank1.h" />
+    <ClInclude Include="Tank2.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

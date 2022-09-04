@@ -1,4 +1,5 @@
 #include <iostream>
+#include <windows.h>
 
 #include "LevelGUI.h"
 #include "ScreenSingleton.h"
@@ -39,6 +40,17 @@ void LevelGUI::Draw() const
     cout << "BombsNum: " << bombsNumber;
 	ScreenSingleton::getInstance().GotoXY(62, 1);
     cout << "Score: " << score;
+
+	
+	if (!messages.empty() ) {
+		ScreenSingleton::getInstance().GotoXY(40, height + 1);
+		cout << messages.front();
+		if (passedTime - tempTime > 4000) {
+			messages.pop();
+			tempTime = passedTime;
+		}
+	}
+
 }
 
 void __fastcall LevelGUI::SetParam(uint64_t passedTimeNew, uint64_t fpsNew, uint16_t bombsNumberNew, int16_t scoreNew)
@@ -47,4 +59,12 @@ void __fastcall LevelGUI::SetParam(uint64_t passedTimeNew, uint64_t fpsNew, uint
     fps = fpsNew;
     bombsNumber = bombsNumberNew;
     score = scoreNew;
+}
+
+void LevelGUI::AddMessage(std::string str) {
+	messages.push(str);
+}
+
+void LevelGUI::DelLastMessage() {
+	messages.pop();
 }
