@@ -1,6 +1,7 @@
 
 #include <conio.h>
 #include <windows.h>
+#include <ctime>
 
 #include "SBomber.h"
 #include "Bomb.h"
@@ -18,6 +19,9 @@
 #include "Tank2.h"
 #include "Mediator.h"
 
+#include "BigPlane.h"
+#include "ColorPlane.h"
+
 using namespace std;
 
 SBomber::SBomber()
@@ -32,11 +36,23 @@ SBomber::SBomber()
 {
 	FileLoggerSingleton::getInstance().WriteToLog(string(__FUNCTION__) + " was invoked");
 
-    Plane* p = new Plane;
-    p->SetDirection(1, 0.1);
-    p->SetSpeed(4);
-    p->SetPos(5, 10);
-    vecDynamicObj.push_back(p);
+
+	srand(time(NULL));
+	if (rand() % 2) {
+		Plane* p = new ColorPlane;
+		p->SetDirection(1, 0.1);
+		p->SetSpeed(4);
+		p->SetPos(5, 10);
+		vecDynamicObj.push_back(p);
+	}
+	else {
+		Plane* p = new BigPlane;
+		p->SetDirection(1, 0.1);
+		p->SetSpeed(4);
+		p->SetPos(5, 10);
+		vecDynamicObj.push_back(p);
+	}
+
 
     LevelGUI* pGUI = new LevelGUI;
     pGUI->SetParam(passedTime, fps, bombsNumber, score);

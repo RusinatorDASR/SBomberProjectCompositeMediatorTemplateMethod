@@ -139,7 +139,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BigPlane.cpp" />
     <ClCompile Include="Bomb.cpp" />
+    <ClCompile Include="ColorPlane.cpp" />
     <ClCompile Include="CompositeHouse.cpp" />
     <ClCompile Include="CompositeHouseLeaf.cpp" />
     <ClCompile Include="CompositeHouseRoof.cpp" />
@@ -162,7 +164,9 @@
     <ClCompile Include="Tank2.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BigPlane.h" />
     <ClInclude Include="Bomb.h" />
+    <ClInclude Include="ColorPlane.h" />
     <ClInclude Include="CompositeHouse.h" />
     <ClInclude Include="CompositeHouseLeaf.h" />
     <ClInclude Include="CompositeHouseRoof.h" />
